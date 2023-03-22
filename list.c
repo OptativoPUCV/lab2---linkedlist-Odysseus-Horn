@@ -45,7 +45,16 @@ void *firstList(List *list) {
     return NULL;
 }
 
-void *nextList(List *list) { return NULL; }
+void *nextList(List *list) { 
+  if (list->current->next != NULL) {
+    list->current = list->current->next;
+    return list->current->data;
+  } else
+    return NULL;
+  
+  
+  return NULL; 
+}
 
 void *lastList(List *list) { return NULL; }
 
