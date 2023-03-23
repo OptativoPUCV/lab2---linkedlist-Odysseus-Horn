@@ -158,7 +158,7 @@ void *popCurrent(List *list) {
   else
   {
     list->current->prev->next = list->current->next;
-    list->current->next->prev = list->current->prev;
+    
   }
   
   if(list->current == list->tail)
@@ -167,7 +167,12 @@ void *popCurrent(List *list) {
     list->tail = list->current->prev;
     list->tail->next = NULL;
   }
-  
+  else
+  {
+      
+    list->current->next->prev = list->current->prev;
+    
+  }
   
   Node *nodoAux = list->current->next;
   
